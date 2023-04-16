@@ -1,4 +1,4 @@
-package org.hang.MyIdea;
+package com.lunici.BinarySearchTree;
 
 public class BinarySearchTree<T> {
     private Node root;
@@ -89,6 +89,7 @@ public class BinarySearchTree<T> {
         // 3.
 
         // 4.
+        return false;
     }
 
     private Node findNode(Integer key) {
