@@ -1,4 +1,4 @@
-package com.lunici.BinarySearchTree;
+package com.lunici.binary_search_tree;
 
 public class BinarySearchTree<T> {
     private Node root;
@@ -33,7 +33,7 @@ public class BinarySearchTree<T> {
 
         Node head = root;
         while (true) {
-            if (key == head.key) {
+            if (key.equals(head.getKey())) {
                 return false;
             }
 
@@ -78,17 +78,7 @@ public class BinarySearchTree<T> {
      * @return Return true if the node has been deleted successfully, if not return false
      */
     public boolean del(Integer key) {
-        Node node = findNode(key);
-
-        // 1.
-        if (!node.hasLeft() && !node.hasRight()){
-
-        }
-        // 2.
-
-        // 3.
-
-        // 4.
+        
         return false;
     }
 
@@ -98,7 +88,7 @@ public class BinarySearchTree<T> {
             if (head == null) {
                 return null;
             }
-            if (head.key == key) {
+            if (key.equals(head.getKey())) {
                 return head;
             } else if (key < head.key) {
                 head = head.getLeft();
@@ -181,11 +171,11 @@ public class BinarySearchTree<T> {
         }
 
         public boolean hasLeft() {
-            return (left == null) ? false : true;
+            return left != null;
         }
 
         public boolean hasRight() {
-            return (right == null) ? false : true;
+            return right != null;
         }
 
         public boolean isEmpty() {
