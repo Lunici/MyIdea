@@ -1,0 +1,12 @@
+
+U
+java:S3516V"9Refactor this method to not always return the same value.(ª–Z8¢’šù0
+K	java:S108…")Either remove or fill this block of code.(ì€ëÉûÿÿÿÿ8±’šù0
+j
+java:S1845Ô"LRename field "left" to prevent any misunderstanding/clash with field "LEFT".(Ğÿìò8·’šù0
+q
+java:S1845Õ"NRename field "right" to prevent any misunderstanding/clash with field "RIGHT".(‡‡Ú‡ÿÿÿÿÿ8·’šù0
+O
+java:S1144º",Remove this unused private "findMin" method.(ÌÄ£ úÿÿÿÿ8¾’šù0
+J
+java:S1144Á",Remove this unused private "findMax" method.(ÖÙƒ²8¾’šù0

@@ -85,6 +85,9 @@ public class BinarySearchTree<T> {
      */
     public boolean del(Integer key) {
         NodeFamily nodeFamily = findNodeFamily(key);
+        Node parent;
+        Node son;
+        int side;
         // (parent , son )   ---   not the first ndoe
         //      1. no left, no right   ---   parent = null
         //      2. only left
@@ -106,13 +109,16 @@ public class BinarySearchTree<T> {
         // (  null , null)   ---   operation fails
 
         // if there is not the target node, operation fails
-        if (!nodeFamily.hasSon()){
+        if (!nodeFamily.hasSon()) {
             return false;
         }
 
-        Node parent = nodeFamily.getParent();
-        Node son = nodeFamily.getSon();
-        int side = nodeFamily.getSide();
+        // set the parent node
+        parent = (nodeFamily.hasParent()) ? nodeFamily.getParent() : root;
+        // set the son node
+        son = nodeFamily.getSon();
+        // set the side between parent and son
+        side = nodeFamily.getSide();
 
         // 1. if the the son does not have leftNode either rightNode
         if (!son.hasLeft() && !son.hasRight()) {
@@ -121,11 +127,10 @@ public class BinarySearchTree<T> {
             } else if (side == Node.RIGHT) {
                 parent.setRight(null);
             }
-
         }
 
         // 2. if the son only has the leftNode
-        if (son.hasLeft() && !son.hasRight()){
+        if (son.hasLeft() && !son.hasRight()) {
 
         }
 
@@ -136,6 +141,7 @@ public class BinarySearchTree<T> {
     /**
      * Find a node family with parent node and son node which the son has the key.
      * The return can be: (parent, son) , (null, son) , (parent, null) , (null, null)
+     *
      * @param key the key of son node that you want to find
      * @return A NodeFamily(parentNode, sonNode)
      */
